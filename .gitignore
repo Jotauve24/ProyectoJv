@@ -1,0 +1,27 @@
+# Dependencias, compilaciones y estado local de desarrollo.
+node_modules/
+.pnpm-store/
+.next/
+.vinext/
+dist/
+out/
+coverage/
+.wrangler/
+.sites-runtime/
+.agents/
+.codex/
+outputs/
+work/
+
+# Configuración privada y credenciales locales.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Archivos del sistema y registros temporales.
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
