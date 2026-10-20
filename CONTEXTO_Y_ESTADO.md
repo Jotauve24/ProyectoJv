@@ -36,7 +36,7 @@ La referencia adjunta es la guía de Informática Empresarial, código BAN-03 40
 5. Presentaciones con Microsoft PowerPoint.
 6. Hojas de cálculo con Microsoft Excel.
 
-El laboratorio visual y el cuestionario de cinco preguntas pertenecen a la unidad 1. Las unidades 2 a 6 contienen objetivos, resúmenes, ejercicios sugeridos y pautas de reflexión; todavía no tienen simuladores propios de Word, Excel o PowerPoint. La unidad 1 también dispone de lecciones sobre periféricos, evolución, finanzas y vocabulario en inglés. No trasladar automáticamente fechas ni porcentajes de evaluación de la guía a la web. Preservar las indicaciones oficiales del docente en la plataforma.
+El laboratorio visual y el cuestionario de cinco preguntas pertenecen a la unidad 1. Las unidades 2 a 6 conservan objetivos e indicaciones y ahora incluyen escenas educativas interactivas: viaje de una página, permisos de colaboración, estructura e índice de un documento, composición de diapositivas y presupuesto con fórmulas. Son prácticas acotadas de apoyo; los trabajos finales se hacen en las aplicaciones y plataforma indicadas por el docente. La unidad 1 también dispone de lecciones sobre periféricos, evolución, finanzas y vocabulario en inglés. No trasladar automáticamente fechas ni porcentajes de evaluación de la guía a la web. Preservar las indicaciones oficiales del docente en la plataforma.
 
 ## Liberación implementada
 
@@ -101,11 +101,21 @@ Compilación Vinext exitosa; comprobación sintáctica de los módulos; recorrid
 
 Se probaron los recorridos docentes y de estudiante con datos sintéticos. Se corrigieron la apertura del importador desde estudiante, el contexto que quedaba activo al salir/cambiar de vista, la pérdida de reflexiones al cerrar el formulario y la selección de evidencias de ciclos archivados. La importación valida todo el paquete antes de modificar datos; preserva las matrículas y evidencias al actualizar material. La reflexión se guarda al escribir. Los enlaces visibles permiten repetir la descarga del PDF y del JSON.
 
-El módulo `public/material.js` concentra el formato de importación/exportación y forma parte de la salida de Pages. Los módulos modificados usan la versión de caché 15 en el HTML; `student.js` usa la 16 por la corrección final de cierre al retirar una unidad de lectura. `node --test tests/*.test.mjs` desde `proyecto/` ejecuta 11 pruebas aprobadas, sin dependencias nuevas. `VERIFICACION_GENERAL.md` detalla las pruebas de interfaz y los límites. Se verificaron bytes, identidad y renderizado del PDF; la entrega del archivo al dispositivo y el diálogo de impresión siguen sin confirmarse en la automatización. No afirmar que ese pendiente está resuelto.
+El módulo `public/material.js` concentra el formato de importación/exportación y forma parte de la salida de Pages. La revisión inmersiva utiliza la versión de caché 21 para los módulos principales del HTML. `node --test tests/*.test.mjs` desde `proyecto/` ejecuta 23 pruebas aprobadas, sin dependencias nuevas. `VERIFICACION_GENERAL.md` detalla las pruebas de interfaz y los límites. Se verificaron bytes, identidad y renderizado del PDF; la entrega del archivo al dispositivo y el diálogo de impresión siguen sin confirmarse en la automatización. No afirmar que ese pendiente está resuelto.
+
+## Experiencias interactivas y nueva pasada de revisión
+
+Se mantuvieron la PC y el diseño de blancos, aluminio y azul. `public/unit-models.js` define las cinco experiencias de las unidades 2–6, sus pasos y las comprobaciones de práctica. `public/unit-studio.js` presenta escenas locales con controles de reproducción, pausa, reinicio, pasos, notas, indicaciones y evidencia; `unit-studio.css` adapta la experiencia a escritorio y teléfono. Solo se aplican a las unidades de informática cuyo título corresponde al tema, para conservar las materias y los contenidos personalizados.
+
+`public/motion.js` respeta la preferencia del dispositivo y permite reducir el movimiento para todas las unidades, incluida la PC. El modelo 3D deja de solicitar cuadros cuando no está visible o la pestaña está oculta. `public/campus-store.js` conserva cambios independientes de matrícula y unidades entre pestañas del mismo navegador; el último guardado explícito prevalece si se modifica exactamente el mismo campo. Esto no añade sincronización entre dispositivos.
+
+La práctica y los pasos consultados aparecen en el informe y su vista de impresión. El avance de cada experiencia se guarda dentro del mismo registro de aprendizaje por grupo, unidad y alumno; no cambiar sus claves. Al cerrar una unidad, el foco vuelve al botón de apertura. Retirar acceso o finalizar el ciclo cierra tanto las escenas nuevas como los formularios de evidencia abiertos.
+
+Se repitió el recorrido de alumno en las seis unidades, las cinco vistas previas docentes, lectura de una materia distinta, matrícula concurrente con un editor abierto, retirada y archivo de ciclo. Se probaron tamaños de 375 × 812 y 812 × 375 mediante marcos de prueba locales, navegación por teclado, Escape y movimiento reducido. Las 23 pruebas automáticas pasan. El PDF de regresión con actividades nuevas fue renderizado y revisado; continúa pendiente confirmar la entrega final del archivo y la impresión del sistema en el equipo del usuario.
 
 ## Repositorio actual
 
-Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio https://github.com/Jotauve24/ProyectoJv, rama `main`. Esta decisión no publica la aplicación ni modifica la web de origen. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
+Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio https://github.com/Jotauve24/ProyectoJv, rama `main`. La aplicación se publica por separado en GitHub Pages, en https://jotauve24.github.io/ProyectoJv/. La web de origen no se modifica. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
 
 ## Publicación actual de ProyectoJv
 

@@ -56,6 +56,19 @@ test('una unidad bloqueada nunca inicia un expediente de estudiante', () => {
   assert.deepEqual(lab.records(), {});
 });
 
+test('el recorrido y las prácticas nuevas quedan en la unidad elegida y se detienen al retirar acceso', () => {
+  const lab = laboratory(); lab.db.groups[0].units[5].released = true;
+  lab.localStorage.setItem('aula-jt-campus-v1', JSON.stringify(lab.db));
+  lab.send('aula-start-student', {...lab.who, unitIndex: 5});
+  lab.send('aula-activity', {type: 'unit-explore', name: 'Un total que responde'});
+  lab.send('aula-activity', {type: 'unit-practice', name: 'Hojas de cálculo', correct: true, answer: 'Total del ejemplo: 594.00.'});
+  assert.equal(lab.records()['grupo:5:alumno'].events.length, 2);
+  assert.equal(lab.records()['grupo:0:alumno'], undefined);
+  lab.db.groups[0].units[5].released = false; lab.localStorage.setItem('aula-jt-campus-v1', JSON.stringify(lab.db));
+  lab.send('aula-activity', {type: 'unit-practice', name: 'Hojas de cálculo', correct: true});
+  assert.equal(lab.records()['grupo:5:alumno'].events.length, 2);
+});
+
 test('el PDF usa el estudiante y la unidad seleccionados y genera bytes PDF válidos', async () => {
   const lab = laboratory(), exports = {}, pdfRuntime = {exports, module: {exports}, atob, btoa, Blob, console};
   pdfRuntime.global = pdfRuntime; vm.createContext(pdfRuntime);
@@ -63,10 +76,13 @@ test('el PDF usa el estudiante y la unidad seleccionados y genera bytes PDF vál
   lab.sandbox.window.jspdf = exports;
   lab.send('aula-start-student', lab.who);
   lab.send('aula-activity', {type: 'quiz', score: 4, total: 5});
+  lab.send('aula-activity', {type: 'unit-explore', name: 'Un total que responde'});
+  lab.send('aula-activity', {type: 'unit-practice', name: 'Presupuesto', question: 'Calcula el total', answer: 'Total del ejemplo: 594.00.', correct: true, feedback: 'Suma los subtotales.'});
   vm.runInContext("testInfo=contextInfo();testRecord=current();testRecord.reflection='Reflexión de prueba';context={groupId:'otro',studentId:'otro',unitIndex:5};testPdf=downloadReport(testInfo,testRecord)", lab.sandbox);
   assert.equal(lab.sandbox.testPdf.filename, 'ProyectoJv_Evidencia_Estudiante_de_prueba_Unidad_1.pdf');
   const bytes = Buffer.from(await lab.sandbox.testPdf.blob.arrayBuffer());
   assert.equal(bytes.subarray(0, 5).toString(), '%PDF-'); assert.ok(bytes.length > 5000);
   assert.ok(bytes.includes(Buffer.from('Estudiante de prueba'))); assert.ok(bytes.includes(Buffer.from('Unidad 1 de 6')));
+  assert.ok(bytes.includes(Buffer.from('Total del ejemplo: 594.00.')));
   if (process.env.PROYECTOJV_QA_PDF) writeFileSync(process.env.PROYECTOJV_QA_PDF, bytes);
 });

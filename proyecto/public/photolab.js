@@ -1,3 +1,4 @@
+import {motionButton} from './motion.js?v=1';
 const $=s=>document.querySelector(s);
 const parts=[['cpu','Procesador','CPU'],['ram','Memoria RAM','RAM'],['ssd','Almacenamiento SSD','SSD'],['board','Placa madre','Placa madre'],['gpu','Tarjeta gráfica','GPU'],['psu','Fuente de poder','Fuente']];
 const points=[[65,33],[72.5,34],[78,59],[56,41],[62,56],[63,76]];
@@ -5,7 +6,7 @@ let selected=0,layout='assembled';
 const host=document.createElement('section');host.id='photolab';host.setAttribute('aria-label','Explorador visual de la computadora');
 const switcher=document.createElement('div');switcher.className='render-switch';
 switcher.innerHTML='<span>Elige cómo explorar</span><button class="active" id="photomode" aria-pressed="true">PC realista</button><button id="geometrymode" aria-pressed="false">Modelo 3D</button>';
-$('.scene').before(switcher,host);
+switcher.append(motionButton('photo-motion'));$('.scene').before(switcher,host);
 function setMode(real){document.body.dataset.renderView=real?'realistic':'geometry';host.hidden=!real;$('.scene').hidden=real;$('#photomode').classList.toggle('active',real);$('#geometrymode').classList.toggle('active',!real);$('#photomode').setAttribute('aria-pressed',String(real));$('#geometrymode').setAttribute('aria-pressed',String(!real));$('#focuspart').textContent=real?'Examinar esta pieza':'◎ Acercar esta pieza en 3D';if(!real)window.dispatchEvent(new Event('resize'));else render()}
 $('#photomode').onclick=()=>setMode(true);$('#geometrymode').onclick=()=>setMode(false);
 function choose(i,detail=false){selected=i;if(detail)layout='detail';window.dispatchEvent(new CustomEvent('aula-select-part',{detail:{index:i}}));render()}

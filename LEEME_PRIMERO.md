@@ -24,6 +24,8 @@ El contenido del chat anterior no se transfiere automáticamente. Este paquete r
 
 ## Web actual y otra cuenta
 
+Web vigente en GitHub Pages: https://jotauve24.github.io/ProyectoJv/
+
 Web original: https://aula-jt-inmersiva.loftytoast3.chatgpt.site
 La web sigue privada en la cuenta de origen. El ZIP no cambia su propietario ni concede acceso a otra cuenta. Si la otra cuenta no tiene acceso al proyecto original, debe crear una copia nueva, con su propio proyecto, repositorio y enlace. El manifiesto de esta copia no contiene el identificador de publicación original.
 
@@ -42,7 +44,7 @@ En el perfil portable, el desarrollo solicita el puerto 5173; usar la dirección
 
     pnpm build
 
-No basta con abrir aula.html como un archivo local: la descarga del PDF utiliza una ruta del servidor. Las herramientas, dependencias y acceso de cada cuenta pueden ser distintos; el nuevo chat deberá comprobarlos.
+Para probar la aplicación, utiliza un servidor local. La versión Vinext entrega el PDF por una ruta del servidor; la salida de GitHub Pages de `docs/` genera y descarga el PDF en el navegador. Las herramientas, dependencias y acceso de cada cuenta pueden ser distintos; el nuevo chat deberá comprobarlos.
 
 ## Datos del docente y estudiantes
 
