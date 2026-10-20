@@ -101,6 +101,12 @@ Compilación Vinext exitosa; comprobación sintáctica de los módulos; recorrid
 
 Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio privado https://github.com/Jotauve24/ProyectoJv, rama `main`. Esta decisión no publica la aplicación ni modifica la web de origen. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
 
+## Publicación actual de ProyectoJv
+
+Publicada el 20 de octubre de 2026 en https://proyectojv.ambersun65.chatgpt.site, con acceso privado del propietario. El identificador de Sites es `appgprj_6ad7a3f37e1481919f0a262a0d4f0828` y se conserva en `proyecto/.openai/hosting.json`; reutilizarlo para actualizar esta misma web. El repositorio de GitHub permanece privado.
+
+Se compiló correctamente el proyecto Vinext conservado. La revisión en navegador confirmó la entrada del estudiante, las cinco unidades bloqueadas después de liberar solo la primera y la visualización de la PC. Se corrigieron los permisos de ejecución de los cuatro scripts de shell de instalación y compilación; su contenido permanece igual. La descarga final del PDF todavía debe comprobarse en el dispositivo del usuario: el navegador de revisión no confirmó el evento de descarga.
+
 ## Publicación desde otra cuenta
 
 El proyecto original pertenece a la cuenta de origen. Esta copia no lleva credenciales, historial Git ni su project_id de despliegue. No reutilizar ni inventar identificadores Sites. Si no hay acceso autorizado al original, registrar un proyecto nuevo en la cuenta nueva y guardar allí su ID. No hacer pública la copia por defecto. Seguir la habilidad Sites disponible en el nuevo entorno; las rutas internas de herramientas de esta sesión no son portables.

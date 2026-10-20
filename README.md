@@ -4,6 +4,8 @@ Laboratorio educativo de informática con grupos, seis unidades, exploración de
 
 Repositorio privado: https://github.com/Jotauve24/ProyectoJv
 
+Web publicada (acceso privado): https://proyectojv.ambersun65.chatgpt.site
+
 ## Continuar el proyecto
 
 Lee primero `LEEME_PRIMERO.md` y `CONTEXTO_Y_ESTADO.md`. El código está en `proyecto/` y la guía académica original en `referencia/`.
