@@ -1,8 +1,9 @@
+import {brandLink, homeLink, decorateAction} from './interface.js?v=1';
 import {experienceFor, restoreStudioState, calculateBudget, assessPractice} from './unit-models.js?v=1';
 import {motionButton, motionReduced} from './motion.js?v=1';
 
 const el = (tag, className, text) => { const n = document.createElement(tag); if (className) n.className = className; if (text !== undefined) n.textContent = text; return n; };
-const btn = (text, action, cls = 'studio-button') => { const b = el('button', cls, text); b.type = 'button'; b.onclick = action; return b; };
+const btn = (text, action, cls = 'studio-button') => { const b = el('button', cls, text); b.type = 'button'; b.onclick = action; return decorateAction(b, text); };
 const read = key => { try { const value = JSON.parse(localStorage.getItem(key) || '{}'); return value && typeof value === 'object' && !Array.isArray(value) ? value : {}; } catch { return {}; } };
 const currency = value => 'B/. ' + value.toLocaleString('es-PA', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 const icons = {
@@ -31,9 +32,9 @@ export function openUnitStudio({course, group, unit, unitIndex, context, onClose
   const dlg = el('dialog', 'unitstudio');
   dlg.style.setProperty('--studio-accent', experience.accent); dlg.style.setProperty('--studio-light', experience.light);
   dlg.setAttribute('aria-label', `Unidad ${unitIndex + 1}: ${unit.title}`);
-  const top = el('div', 'studio-topbar'), brand = el('span', 'studio-brand', 'ProyectoJv');
+  const top = el('div', 'studio-topbar'), brand = brandLink();
   const back = btn('Cerrar unidad', () => dlg.close(), 'studio-button studio-back');
-  top.append(brand, el('span', 'studio-top-context', group.name + (hasStudent ? ' · Tu espacio de aprendizaje' : ' · Vista previa docente')), back); dlg.append(top);
+  top.append(brand, el('span', 'studio-top-context', group.name + (hasStudent ? ' · Tu espacio de aprendizaje' : ' · Vista previa docente')), homeLink(), back); dlg.append(top);
   const header = el('div', 'studio-header'), copy = el('div');
   copy.append(el('p', 'studio-eyebrow', `Unidad ${String(unitIndex + 1).padStart(2, '0')} de 06 · ${experience.tag}`), el('h2', '', experience.label), el('p', 'studio-intro', experience.intro));
   const badge = el('div', 'studio-duration'); badge.append(el('b', '', experience.time), el('span', '', 'Explora a tu ritmo')); header.append(copy, badge); dlg.append(header);

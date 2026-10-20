@@ -101,7 +101,7 @@ Compilación Vinext exitosa; comprobación sintáctica de los módulos; recorrid
 
 Se probaron los recorridos docentes y de estudiante con datos sintéticos. Se corrigieron la apertura del importador desde estudiante, el contexto que quedaba activo al salir/cambiar de vista, la pérdida de reflexiones al cerrar el formulario y la selección de evidencias de ciclos archivados. La importación valida todo el paquete antes de modificar datos; preserva las matrículas y evidencias al actualizar material. La reflexión se guarda al escribir. Los enlaces visibles permiten repetir la descarga del PDF y del JSON.
 
-El módulo `public/material.js` concentra el formato de importación/exportación y forma parte de la salida de Pages. La revisión inmersiva utiliza la versión de caché 21 para los módulos principales del HTML. `node --test tests/*.test.mjs` desde `proyecto/` ejecuta 23 pruebas aprobadas, sin dependencias nuevas. `VERIFICACION_GENERAL.md` detalla las pruebas de interfaz y los límites. Se verificaron bytes, identidad y renderizado del PDF; la entrega del archivo al dispositivo y el diálogo de impresión siguen sin confirmarse en la automatización. No afirmar que ese pendiente está resuelto.
+El módulo `public/material.js` concentra el formato de importación/exportación y forma parte de la salida de Pages. La revisión inmersiva utiliza la versión de caché 22 para los módulos principales del HTML. `node --test tests/*.test.mjs` desde `proyecto/` ejecuta 23 pruebas aprobadas, sin dependencias nuevas. `VERIFICACION_GENERAL.md` detalla las pruebas de interfaz y los límites. Se verificaron bytes, identidad y renderizado del PDF; la entrega del archivo al dispositivo y el diálogo de impresión siguen sin confirmarse en la automatización. No afirmar que ese pendiente está resuelto.
 
 ## Experiencias interactivas y nueva pasada de revisión
 
@@ -128,3 +128,10 @@ Se compiló correctamente la versión Vinext conservada. La revisión en navegad
 ## Publicación desde otra cuenta
 
 El proyecto original pertenece a la cuenta de origen. Esta copia no lleva credenciales, historial Git ni su project_id de despliegue. No reutilizar ni inventar identificadores Sites. Si no hay acceso autorizado al original, registrar un proyecto nuevo en la cuenta nueva y guardar allí su ID. No hacer pública la copia por defecto. Seguir la habilidad Sites disponible en el nuevo entorno; las rutas internas de herramientas de esta sesión no son portables.
+
+
+## Logo y navegación de Inicio
+
+La portada ahora sigue la captura oscura que el usuario aportó: azul noche, letras grandes con azul y violeta y accesos claros. `public/logo.svg`, `interface.js` e `interface.css` unifican la marca, los enlaces de Inicio, los iconos y los estados de pulsación. Al pulsar el logo o Inicio, `student.js` muestra la portada y cierra las ventanas sin borrar datos. El encabezado de las actividades comparte el mismo logo y un botón Inicio. El generador de Pages copia los tres recursos nuevos y el HTML usa la versión de caché 22; las importaciones de `unit-studio.js` pasan a versión 2.
+
+Se comprobó la recuperación de notas de la PC, cantidad y libreta de Excel y reflexión de evidencia después de usar Inicio. La vuelta por teclado funciona y el foco retorna al logo. Se corrigió el ancho del encabezado docente en teléfono y los nombres accesibles de sus botones compactos. Taste, Impeccable y Emil Kowalski se consultaron como guías originales; sus alcances y adaptaciones quedan documentados en DESIGN.md. Se mantienen los límites de datos locales, cuentas y entrega final del PDF ya descritos.

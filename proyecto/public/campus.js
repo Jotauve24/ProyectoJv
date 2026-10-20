@@ -1,7 +1,8 @@
 import {mergeCampus} from './campus-store.js?v=1';
 import {guideUnits} from './course-guide.js?v=1';
 import {createMaterial, importMaterial} from './material.js?v=1';
-import {openUnitStudio} from './unit-studio.js?v=1';
+import {openUnitStudio} from './unit-studio.js?v=2';
+import {decorateAction} from './interface.js?v=1';
 import {experienceFor} from './unit-models.js?v=1';
 const $=s=>document.querySelector(s);const make=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e};
 let db;try{db=JSON.parse(localStorage.getItem('aula-jt-campus-v1'))}catch{}let savedSnapshot=structuredClone(db);const uid=()=>crypto.randomUUID?.()||Date.now().toString(36)+Math.random().toString(36).slice(2);
@@ -14,7 +15,7 @@ let currentCycle=db.cycles.find(c=>!c.closed)?.id||db.cycles[0].id,activeGroup=n
 function latestCampus(){try{const value=JSON.parse(localStorage.getItem('aula-jt-campus-v1'));return value&&Array.isArray(value.groups)?value:null}catch{return null}}function reloadCampus(){const latest=latestCampus();if(latest){db=latest;savedSnapshot=structuredClone(latest)}}
 function save(){try{const remote=latestCampus(),merged=remote?mergeCampus(savedSnapshot,db,remote):db;localStorage.setItem('aula-jt-campus-v1',JSON.stringify(merged));db=merged;savedSnapshot=structuredClone(db)}catch{alert('No se pudo guardar. Revisa el almacenamiento de tu navegador.')}}save();
 const host=$('#campus'),lab=$('#laboratory');
-function button(text,fn,cls='campusbutton'){const b=make('button',cls,text);b.type='button';b.onclick=fn;return b}
+function button(text,fn,cls='campusbutton'){const b=make('button',cls,text);b.type='button';b.onclick=fn;return decorateAction(b,text)}
 function h(title,sub){const d=make('div','campusheading');const text=make('div');text.append(make('p','campuskicker','Espacio docente'),make('h1','',title),make('p','campussub',sub));d.append(text);return d}
 function showCampus(){reloadCampus();if(document.body.dataset.mode==='student'){window.dispatchEvent(new Event('aula-student-home'));return}lab.hidden=true;host.hidden=false;$('#campusnav').classList.add('active');document.querySelectorAll('.railbtn[data-view]').forEach(x=>x.classList.remove('active'));render()}
 function openLab(){host.hidden=true;lab.hidden=false;$('#campusnav').classList.remove('active');document.querySelector('[data-view="lab"]').click();window.dispatchEvent(new Event('resize'));window.scrollTo({top:0})}

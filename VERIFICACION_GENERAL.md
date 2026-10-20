@@ -67,3 +67,12 @@ El movimiento reducido se conserva al pasar de una unidad a otra; hay controles 
 La prueba entre dos ventanas encontró una matrícula docente desactualizada. Se añadió actualización local y combinación de cambios independientes: guardar indicaciones con un editor abierto conservó al alumno inscrito desde la otra ventana. El historial conservó los tres alumnos de la materia de prueba y excluyó el ciclo finalizado de la entrada del estudiante. Una materia distinta conservó su lectura y evidencia sin recibir una escena de informática.
 
 Las pruebas automáticas nuevas cubren selección curricular, recálculo en céntimos, validación de datos, retroalimentación, reanudación y combinación de cambios concurrentes. El total actual es de 23 pruebas, sin dependencias adicionales. Los límites de descarga, impresión, autenticación y sincronización entre dispositivos indicados arriba se mantienen.
+
+
+## Revisión de logo y controles
+
+Se verificó el regreso a Inicio mediante el logo y el enlace de Inicio desde el acceso del estudiante, el panel docente, un formulario de grupo, la PC, la actividad de Excel y el formulario de evidencia. El regreso cierra las ventanas y devuelve el foco a la marca sin borrar datos guardados. Al volver al curso de prueba se recuperaron la libreta de la PC, seis teclados con total de B/. 644.00 en Excel, la nota propia de esa unidad y la reflexión escrita en evidencia.
+
+Se revisaron la portada a 375 px, el panel docente a 375 y 768 px y las ventanas docentes y de actividad en teléfono. Se corrigió un desbordamiento del encabezado; después de la corrección el ancho de desplazamiento coincidió con el ancho del documento en los tamaños comprobados. Los botones compactos mantienen nombres accesibles. Enter sobre el logo funciona; los estados de foco son visibles y el movimiento de controles se retira con teclado o preferencia reducida. Se comprobaron los pares de color principales, incluidas las cinco acciones de práctica, con contraste de al menos 4.5:1 en superficies planas.
+
+La misma batería de 23 pruebas pasó después de los cambios. Se comprobó la sintaxis de los cuatro módulos modificados y la generación de Pages. No se ejecutó el inspector automático de Taste ni el cargador de contexto de Impeccable; se revisaron sus guías originales y el resultado renderizado con las herramientas disponibles. Esta revisión no cambia el pendiente de descarga e impresión final del PDF ni implementa sincronización entre dispositivos.

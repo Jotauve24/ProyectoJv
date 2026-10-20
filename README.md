@@ -42,6 +42,8 @@ Guarda los cambios del código y de `docs/` en la rama `main`. GitHub Pages publ
 
 - El progreso, los grupos y las evidencias se guardan en el navegador.
 - Las unidades 2 a 6 incluyen escenas interactivas de Internet, colaboración, documentos, presentaciones y hojas de cálculo, con prácticas y notas por estudiante.
+- El logo JV y el botón Inicio permiten volver a la portada conservando el trabajo guardado.
+- La portada sigue la referencia oscura del usuario; los controles incluyen iconos, pulsación, foco y adaptación móvil.
 - Las animaciones tienen pasos controlables, pausa y movimiento reducido. Se conservan las reglas de liberación del docente.
 - Las vistas de estudiante y docente todavía no son cuentas autenticadas.
 - En GitHub Pages, los informes PDF se descargan en el navegador. La versión Vinext conserva `POST /api/evidence-pdf`.

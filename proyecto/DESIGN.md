@@ -1,6 +1,6 @@
 # ProyectoJv
 
-Design direction: educational studio, with white and aluminum surfaces, blue primary controls and a dark 3D stage. The model, rather than decorative imagery, is the focus of the lab. System type preserves native readability on Apple and other devices. Instructor workflow is cycle > variable number of groups > one subject per group > students > exactly six units.
+Design direction: a navy entrance with large white, blue and violet lettering, based on the user’s supplied visual reference. The learning and instructor screens keep white and aluminum surfaces, blue primary controls and a dark 3D stage. The model, rather than decorative imagery, is the focus of the lab. System type preserves native readability on Apple and other devices. Instructor workflow is cycle > variable number of groups > one subject per group > students > exactly six units.
 
 Design references consulted:
 - https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md
@@ -46,3 +46,28 @@ La escena específica de cada tema ocupa el área principal; la explicación del
 Se consultaron las reglas de movimiento, accesibilidad y rendimiento de UI/UX Pro Max; sus recomendaciones automáticas de tipografía infantil no se ajustaron a este público y se mantuvo la identidad existente. La revisión de frontend-design reforzó escenas ligadas al contenido, texto breve y movimiento como respuesta a una acción. No se añadieron dependencias de animación: SVG, CSS y controles nativos bastan para estas escenas.
 
 Las secuencias se reproducen una vez, se pueden pausar y se detienen al cerrar o abandonar la pestaña. El movimiento reducido permite avanzar manualmente. Se probaron los cinco escenarios a 375 px, una vista horizontal de 812 px y escritorio, además de Tab, Enter, Escape y retorno del foco. Las notas y decisiones se guardan por alumno y unidad; las vistas previas docentes no crean expedientes.
+
+
+## Marca, acceso y acabado · 20 de octubre de 2026
+
+El usuario aportó una captura de EON Reality como guía de letras, colores y orden. La portada toma su encabezado azul noche, el título grande a la izquierda, los acentos azul y violeta y la secuencia de acciones debajo. La imagen de la PC de ProyectoJv se conserva y ocupa la escena principal. No se utilizan marcas, imágenes, textos ni funciones de terceros de esa captura.
+
+El logo JV es un SVG propio y funciona como enlace de Inicio. El encabezado, la entrada del alumno y las ventanas de actividad y evidencia comparten esa acción. El regreso cambia la vista sin recargar, cierra las ventanas abiertas y limpia el contexto de registro; conserva identidad local, matrículas, datos de la práctica, notas y reflexión guardados. El enlace `./` queda como destino si se abre en otra pestaña.
+
+Las guías se leyeron desde sus repositorios originales, sin instalarlas globalmente:
+
+- [Taste](https://github.com/Leonxlnx/taste-skill/blob/main/skills/taste-skill/SKILL.md), blob `433d92105c76671250013e0312d82cb413f552bc`: escala tipográfica, composición y crítica visual; se eliminaron números y distintivos decorativos de los accesos.
+- [Impeccable](https://github.com/pbakaus/impeccable/blob/main/.agents/skills/impeccable/SKILL.md), blob `7da92d6e902cd1bf001f05a80f7592b61d6381f4`: refinamiento acotado, contraste, legibilidad y estados. Se consultaron Bolder y Craft floor. El cargador de contexto no está instalado; se usaron directamente este documento y CONTEXTO_Y_ESTADO.md.
+- [Emil Kowalski · Design Engineering](https://github.com/emilkowalski/skills/blob/main/skills/emil-design-eng/SKILL.md), blob `62ce902af8dd32c590ea7203e9ab2edb1d6ef81a`: respuesta de pulsación de 140 ms, curva de salida y retirada del movimiento de interacción al usar teclado o movimiento reducido.
+
+La referencia explícita del usuario prevalece sobre recomendaciones genéricas contrarias al violeta, al énfasis de palabras y a conservar la tipografía nativa. La PC se mantiene como imagen central; no se añadieron fotografías de relleno ni nuevas bibliotecas. Las guías se aplicaron como revisión del proyecto existente. No se ejecutaron el sorteo de direcciones ni el inspector automático de Taste: la verificación visual se hizo con el navegador disponible en escritorio, teléfono y tableta. No se atribuye una puntuación automática ni una ejecución completa de esos inspectores.
+
+| Antes | Después | Motivo |
+| --- | --- | --- |
+| Logo de portada como texto sin destino | Símbolo JV y palabra ProyectoJv con enlace a Inicio | Orientación y regreso desde cualquier vista |
+| Título y controles con poco contraste visual | Portada azul noche, título grande y dos acciones principales | Seguir la referencia aprobada y hacer visible la entrada |
+| Botones sin un acabado común | Iconos SVG, bordes, pulsación y foco coherentes | Reconocer acciones y respuesta de la interfaz |
+| Encabezado docente demasiado ancho en teléfono | Acciones compactas con nombres accesibles | Conservar todos los controles sin desplazamiento horizontal |
+| Efectos de entrada repetidos en accesos | Una entrada breve del título y controles inmediatos por teclado | Evitar retrasos al volver al aula |
+
+Los colores principales comprobados incluyen `#0d1629` de fondo, `#f5f6ff` de texto, `#65b8ff` y `#b294ff` de énfasis, `#aa8bff` en la acción de entrada y `#10172a` para su texto. Las parejas planas revisadas superan 4.5:1; el fondo fotográfico se revisó visualmente. El texto de cuerpo en teléfono es de 16 px. Las unidades y sus reglas de liberación mantienen el comportamiento anterior.
