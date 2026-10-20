@@ -6,6 +6,8 @@ Repositorio: https://github.com/Jotauve24/ProyectoJv
 
 Publicación web: GitHub Pages, desde la carpeta `docs` de la rama `main`.
 
+Sitio: https://jotauve24.github.io/ProyectoJv/
+
 ## Continuar el proyecto
 
 Lee primero `LEEME_PRIMERO.md` y `CONTEXTO_Y_ESTADO.md`. El código está en `proyecto/` y la guía académica original en `referencia/`.
@@ -45,6 +47,8 @@ Guarda los cambios del código y de `docs/` en la rama `main`. GitHub Pages publ
 - Los identificadores internos `aula-jt-*` y el formato `aula-jt-material` se conservan por compatibilidad.
 
 El repositorio guarda el código. La publicación de la aplicación se gestiona por separado.
+
+La revisión funcional y sus límites están documentados en [VERIFICACION_GENERAL.md](VERIFICACION_GENERAL.md). Desde `proyecto/`, `npm test` ejecuta las pruebas de regresión sin instalar dependencias adicionales.
 
 ## Recursos y licencias
 

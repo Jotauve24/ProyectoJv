@@ -97,6 +97,12 @@ Compilación Vinext exitosa; comprobación sintáctica de los módulos; recorrid
 3. Para uso real con estudiantes de distintos dispositivos, diseñar cuentas, roles y almacenamiento compartido antes de afirmar que las liberaciones son globales.
 4. Mantener la herramienta como apoyo a la plataforma institucional.
 
+## Revisión general del 20 de octubre de 2026
+
+Se probaron los recorridos docentes y de estudiante con datos sintéticos. Se corrigieron la apertura del importador desde estudiante, el contexto que quedaba activo al salir/cambiar de vista, la pérdida de reflexiones al cerrar el formulario y la selección de evidencias de ciclos archivados. La importación valida todo el paquete antes de modificar datos; preserva las matrículas y evidencias al actualizar material. La reflexión se guarda al escribir. Los enlaces visibles permiten repetir la descarga del PDF y del JSON.
+
+El módulo `public/material.js` concentra el formato de importación/exportación y forma parte de la salida de Pages. Los módulos modificados usan la versión de caché 15 en el HTML. `node --test tests/*.test.mjs` desde `proyecto/` ejecuta 11 pruebas aprobadas, sin dependencias nuevas. `VERIFICACION_GENERAL.md` detalla las pruebas de interfaz y los límites. Se verificaron bytes, identidad y renderizado del PDF; la entrega del archivo al dispositivo y el diálogo de impresión siguen sin confirmarse en la automatización. No afirmar que ese pendiente está resuelto.
+
 ## Repositorio actual
 
 Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio https://github.com/Jotauve24/ProyectoJv, rama `main`. Esta decisión no publica la aplicación ni modifica la web de origen. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
