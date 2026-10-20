@@ -11,6 +11,7 @@ Fecha: 20 de octubre de 2026. Revisión con datos sintéticos, conservando el di
 - La importación valida las seis unidades y sus enlaces antes de modificar el campus. Actualizar un material importado conserva estudiantes, identificadores y finalización; aplica las nuevas liberaciones y retiradas.
 - Los enlaces de material aceptan HTTP/HTTPS sin credenciales. Una lectura confirmada no se registra repetidamente pulsando el mismo botón.
 - Los informes PDF y el material JSON ofrecen un enlace visible para repetir la descarga. El PDF utiliza la identidad y unidad capturadas al generar el informe.
+- Retirar acceso cierra tanto el laboratorio como las ventanas de lectura y evidencia que estén abiertas en otra pestaña del mismo navegador.
 - La entrada del alumno lee el campus más reciente antes de registrarlo, para conservar los cambios docentes realizados mientras el formulario estaba abierto.
 
 ## Recorridos comprobados
@@ -27,7 +28,7 @@ Fecha: 20 de octubre de 2026. Revisión con datos sintéticos, conservando el di
 | Estudiante | Entrada, elección de grupo, cambio de nombre, salida y reingreso | Correcto |
 | Estudiante | Archivo inválido, importación válida y actualización de material | Correcto; conserva la reflexión anterior |
 | Estudiante | Unidades bloqueadas, lectura de las unidades 2 a 6 y formulario de evidencia con la identidad correspondiente | Correcto |
-| Estudiante | Retirada desde otra pestaña mientras está abierta la unidad | Vuelve al curso y queda bloqueada |
+| Estudiante | Retirada desde otra pestaña mientras está abierto el laboratorio o una unidad de lectura | Vuelve al curso y queda bloqueada |
 | Laboratorio | PC completa, piezas separadas, anterior/siguiente, seis componentes y marcas de comprensión | Correcto |
 | Laboratorio | Alternar fotografía/modelo, vistas, zoom, CPU, refrigeración, separación y reinicio | Correcto en el modo compatible disponible en el navegador de prueba |
 | Aprendizaje | Ocho lecciones y sus accesos; cinco preguntas con respuesta incorrecta y correctas | Correcto; resultado de prueba 4/5 y explicación por pregunta |
