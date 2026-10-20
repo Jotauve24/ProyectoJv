@@ -2,9 +2,9 @@
 
 Laboratorio educativo de informática con grupos, seis unidades, exploración de una computadora, prácticas y evidencias PDF.
 
-Repositorio privado: https://github.com/Jotauve24/ProyectoJv
+Repositorio: https://github.com/Jotauve24/ProyectoJv
 
-Web publicada (acceso privado): https://proyectojv.ambersun65.chatgpt.site
+Publicación web: GitHub Pages, desde la carpeta `docs` de la rama `main`.
 
 ## Continuar el proyecto
 
@@ -26,11 +26,21 @@ pnpm dev
 
 Abre la dirección que anuncie la terminal. Para compilar, ejecuta `pnpm build` desde `proyecto/`.
 
+## Publicar en GitHub Pages
+
+Genera la versión web desde la raíz del repositorio:
+
+```powershell
+node proyecto/scripts/build-pages.mjs
+```
+
+Guarda los cambios del código y de `docs/` en la rama `main`. GitHub Pages publica desde `main` y la carpeta `/docs`. El generador copia únicamente el HTML y los recursos públicos indicados; las configuraciones privadas y los archivos del servidor quedan fuera de esa salida. El PDF se descarga directamente en el navegador cuando se usa GitHub Pages.
+
 ## Estado actual
 
 - El progreso, los grupos y las evidencias se guardan en el navegador.
 - Las vistas de estudiante y docente todavía no son cuentas autenticadas.
-- Los informes PDF se generan en el cliente y se entregan mediante `POST /api/evidence-pdf`.
+- En GitHub Pages, los informes PDF se descargan en el navegador. La versión Vinext conserva `POST /api/evidence-pdf`.
 - La descarga final desde el dispositivo del usuario y la sincronización entre dispositivos siguen pendientes de verificación o implementación, respectivamente.
 - Los identificadores internos `aula-jt-*` y el formato `aula-jt-material` se conservan por compatibilidad.
 

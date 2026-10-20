@@ -19,6 +19,10 @@ work/
 !.env.example
 *.pem
 *.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
 
 # Archivos del sistema y registros temporales.
 .DS_Store

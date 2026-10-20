@@ -99,13 +99,15 @@ Compilación Vinext exitosa; comprobación sintáctica de los módulos; recorrid
 
 ## Repositorio actual
 
-Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio privado https://github.com/Jotauve24/ProyectoJv, rama `main`. Esta decisión no publica la aplicación ni modifica la web de origen. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
+Por indicación del usuario, la continuidad de ProyectoJv se conserva por ahora en el repositorio https://github.com/Jotauve24/ProyectoJv, rama `main`. Esta decisión no publica la aplicación ni modifica la web de origen. La carpeta local indicada por el usuario es `C:\Users\samte\Documents\IA\ProyectoJv_Proyecto_Completo_2026-10-20\ProyectoJv`; esa ruta está en su equipo y no es accesible directamente desde el entorno de trabajo del asistente.
 
 ## Publicación actual de ProyectoJv
 
-Publicada el 20 de octubre de 2026 en https://proyectojv.ambersun65.chatgpt.site, con acceso privado del propietario. El identificador de Sites es `appgprj_6ad7a3f37e1481919f0a262a0d4f0828` y se conserva en `proyecto/.openai/hosting.json`; reutilizarlo para actualizar esta misma web. El repositorio de GitHub permanece privado.
+Destino solicitado por el usuario: **GitHub Pages**. Autoriza que el repositorio sea público si es necesario, después de revisar que no contenga contraseñas, claves de API, tokens ni otros secretos. La publicación de Sites realizada durante la preparación no es el destino elegido para continuar.
 
-Se compiló correctamente el proyecto Vinext conservado. La revisión en navegador confirmó la entrada del estudiante, las cinco unidades bloqueadas después de liberar solo la primera y la visualización de la PC. Se corrigieron los permisos de ejecución de los cuatro scripts de shell de instalación y compilación; su contenido permanece igual. La descarga final del PDF todavía debe comprobarse en el dispositivo del usuario: el navegador de revisión no confirmó el evento de descarga.
+La web se genera con `node proyecto/scripts/build-pages.mjs`, conservando el mismo HTML, estilos y recursos de la aplicación. La salida es `docs/`, que se publica desde la rama `main`, carpeta `/docs`. El generador usa una lista explícita de recursos públicos y añade un indicador de GitHub Pages. En este alojamiento, el PDF se descarga mediante jsPDF en el navegador; las ejecuciones Vinext conservan la ruta HTTP existente. No cambiar el diseño, los identificadores de almacenamiento ni el formato de los paquetes de material.
+
+Se compiló correctamente la versión Vinext conservada. La revisión en navegador confirmó la entrada del estudiante, las cinco unidades bloqueadas después de liberar solo la primera y la visualización de la PC. Los cuatro scripts de shell conservan permisos de ejecución para la instalación y compilación de la versión de servidor.
 
 ## Publicación desde otra cuenta
 

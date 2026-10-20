@@ -1,5 +1,9 @@
 # ProyectoJv — Continuar en otra cuenta
 
+## Publicación elegida: GitHub Pages
+
+La indicación vigente del usuario es publicar ProyectoJv en GitHub Pages. Autoriza un repositorio público, revisando antes que no incluya contraseñas, claves de API, tokens ni configuraciones privadas. El código sigue en `proyecto/`; `node proyecto/scripts/build-pages.mjs` genera `docs/`, que se publica desde `main` y `/docs`. Mantener esta publicación como destino de las próximas actualizaciones. Las instrucciones históricas sobre Sites que aparecen más abajo describen el entorno de origen.
+
 ## Qué hacer
 
 1. Descarga este ZIP en tu computadora.
