@@ -71,3 +71,16 @@ La referencia explícita del usuario prevalece sobre recomendaciones genéricas 
 | Efectos de entrada repetidos en accesos | Una entrada breve del título y controles inmediatos por teclado | Evitar retrasos al volver al aula |
 
 Los colores principales comprobados incluyen `#0d1629` de fondo, `#f5f6ff` de texto, `#65b8ff` y `#b294ff` de énfasis, `#aa8bff` en la acción de entrada y `#10172a` para su texto. Las parejas planas revisadas superan 4.5:1; el fondo fotográfico se revisó visualmente. El texto de cuerpo en teléfono es de 16 px. Las unidades y sus reglas de liberación mantienen el comportamiento anterior.
+
+## Panel principal y etiquetas de la PC · 20 de octubre de 2026
+
+Se conserva la portada aprobada, la PC y el espacio claro de trabajo. El panel docente reduce la altura de su bloque visual y reutiliza la fotografía del equipo. La búsqueda filtra grupos y materias sin distinguir acentos y anuncia los resultados; cada tarjeta muestra por separado unidades liberadas y finalizadas. Las indicaciones se consultan con un desplegable nativo y los botones de grupo tienen nombres accesibles únicos. El curso del estudiante propone una unidad disponible sin abrir contenido bloqueado y mantiene visibles sus seis unidades.
+
+| Antes | Después | Motivo |
+| --- | --- | --- |
+| Las etiquetas centradas de la PC heredaban una escala que quitaba su desplazamiento | La pulsación conserva el centrado en foto y modelo 3D | Evitar que el objetivo se mueva y pierda el clic |
+| Grupos bajo un bloque visual alto, con cifras poco legibles | Bloque compacto con la PC original, resumen y búsqueda | Encontrar el grupo y reconocer su disponibilidad |
+| Seis explicaciones completas abiertas a la vez | Indicaciones desplegables con acciones siempre visibles | Recorrer las unidades con menos desplazamiento |
+| Lista de unidades sin una acción inicial destacada | Acceso a una unidad liberada y recorrido de tres pasos | Orientar al estudiante sin cambiar las reglas de acceso |
+
+No fue necesario crear recursos en Blender: se corrigió la interacción del equipo conservado. Los cambios siguen las guías Taste, Impeccable y Emil ya documentadas: jerarquía por tarea, controles reales y movimiento breve que conserva la posición de los objetivos. Las pruebas utilizan identidades sintéticas en la vista de ensayo; no se copian matrículas a la publicación.

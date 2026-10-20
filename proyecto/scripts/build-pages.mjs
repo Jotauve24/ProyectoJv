@@ -6,7 +6,7 @@ const project = fileURLToPath(new URL('../', import.meta.url));
 const output = fileURLToPath(new URL('../../docs/', import.meta.url));
 const assets = [
   'app.js', 'campus.js', 'course-guide.js', 'evidence.js', 'photolab.js',
-  'student.js', 'material.js', 'interface.js', 'interface.css', 'logo.svg', 'campus-store.js', 'motion.js', 'unit-studio.js', 'unit-models.js', 'unit-studio.css', 'style.css', 'three.module.js', 'jspdf.umd.min.js',
+  'student.js', 'material.js', 'interface.js', 'interface.css', 'dashboard.css', 'logo.svg', 'campus-store.js', 'motion.js', 'unit-studio.js', 'unit-models.js', 'unit-studio.css', 'style.css', 'three.module.js', 'jspdf.umd.min.js',
   'THREE-LICENSE.txt', 'aula-pc-hero.webp', 'parts/board.webp', 'parts/cpu.webp',
   'parts/gpu.webp', 'parts/psu.webp', 'parts/ram.webp', 'parts/ssd.webp',
 ];
