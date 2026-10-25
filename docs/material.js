@@ -1,3 +1,4 @@
+import {activityCatalog} from './activity-catalog.js?v=1';
 // Formato compatible con los paquetes originales de Aula JT.
 const purposes = ['support', 'extra', 'grade'];
 const text = (value, limit) => typeof value === 'string' ? value.trim().slice(0, limit) : '';
@@ -16,7 +17,7 @@ export function createMaterial(db, group) {
     course: {id: course.id, name: course.name},
     cycle: {id: cycle.id, name: cycle.name},
     units: group.units.map(u => ({title: u.title, description: u.released === true ? u.description : '',
-      link: u.released === true ? u.link : '', purpose: u.purpose || 'support', released: u.released === true})),
+      link: u.released === true ? u.link : '', purpose: u.purpose || 'support', released: u.released === true,...(u.released===true&&u.activityId?{activityId:u.activityId}:{}),...(u.released===true&&u.assignmentProfile?{assignmentProfile:u.assignmentProfile}:{})})),
   };
 }
 
@@ -35,6 +36,8 @@ export function importMaterial(db, data, studentName, uid) {
   const units = data.units.map((u, i) => {
     if (!u || typeof u !== 'object' || Array.isArray(u) || !text(u.title, 300))
       throw Error(`Revisa el contenido de la unidad ${i + 1}.`);
+    if(u.activityId!==undefined&&!activityCatalog.some(a=>a.id===u.activityId))throw Error(`La actividad preparada de la unidad ${i+1} no es válida.`);
+    if(u.assignmentProfile!==undefined&&!['taller-u1','custom'].includes(u.assignmentProfile))throw Error(`La guía de trabajo de la unidad ${i+1} no es válida.`);
     const released = u.released === true, link = released ? text(u.link, 2000) : '';
     if (link) {
       let url;
@@ -43,7 +46,7 @@ export function importMaterial(db, data, studentName, uid) {
         throw Error(`Usa un enlace HTTP o HTTPS sin credenciales en la unidad ${i + 1}.`);
     }
     return {title: text(u.title, 300), description: released ? text(u.description, 6000) : '',
-      link, purpose: purposes.includes(u.purpose) ? u.purpose : 'support', released, done: false};
+      link, purpose: purposes.includes(u.purpose) ? u.purpose : 'support', released, done: false,...(released&&u.activityId?{activityId:u.activityId}:{}),...(released&&u.assignmentProfile?{assignmentProfile:u.assignmentProfile}:{})};
   });
   let cycle = db.cycles.find(c => c.id === meta.cycle.id);
   if (cycle?.closed) throw Error('Este ciclo está finalizado. Pide a tu docente el material del ciclo vigente.');

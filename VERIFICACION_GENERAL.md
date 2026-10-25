@@ -85,3 +85,11 @@ La misma batería de 23 pruebas pasó después de los cambios. Se comprobó la s
 - Recorrido de alumno con nombre sintético, acceso principal a U1, selección de RAM, regreso con el logo y apertura del panel docente. En un marco de 375 px, el curso midió 360/360 px (ancho/desplazamiento) y el panel docente y su grupo 304/304 px; sin desbordamiento horizontal.
 - Se repitieron las 23 pruebas Node de material, campus, evidencias y experiencias: 23 aprobadas. Los cuatro módulos modificados pasan comprobación sintáctica. La salida de Pages se genera desde el código conservado e incluye `dashboard.css`; no contiene la página de ensayo adaptable.
 - Continúa pendiente verificar la entrega final del PDF y la impresión del sistema en el dispositivo del usuario. Esta revisión no cambia el almacenamiento local ni añade autenticación o sincronización entre dispositivos.
+
+## Taller de Informática y actividades reutilizables · 25 de octubre de 2026
+
+Se desarrolló la Unidad I de la nueva guía RMES 03-304 en el aula existente: seis temas, diagnóstico formativo sin calificación, PC conservada, ejercicios de apoyo, simulador del Explorador, trabajo grupal integrado de glosario/línea de tiempo/ensayo y foro independiente. Las otras cinco unidades tienen solo sus títulos y quedan pendientes. [TALLER_INFORMATICA_UNIDAD_I.md](TALLER_INFORMATICA_UNIDAD_I.md) detalla la correspondencia, las pruebas y los límites.
+
+Las actividades se pueden asignar por identificador a otra materia o posición. El editor permite traer un recurso y sus indicaciones sin copiar alumnos, liberación, finalización ni evidencias. Se comprobó en navegador el traslado a U3 de otra materia, la recuperación de borradores de alumno después de recargar y el cierre del recorrido al retirar acceso en otra pestaña. Las 33 pruebas automáticas pasan y Pages se genera correctamente. El PDF incluye el diagnóstico como formativo y conserva separadas las entregas de trabajo y foro.
+
+Los datos siguen en el navegador. La automatización no confirmó la recepción del borrador Markdown descargado; la recepción final del PDF y la impresión del sistema mantienen el pendiente anterior. No se publican los datos sintéticos ni la guía nueva como archivo.

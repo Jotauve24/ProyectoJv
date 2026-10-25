@@ -86,3 +86,24 @@ test('el PDF usa el estudiante y la unidad seleccionados y genera bytes PDF vál
   assert.ok(bytes.includes(Buffer.from('Total del ejemplo: 594.00.')));
   if (process.env.PROYECTOJV_QA_PDF) writeFileSync(process.env.PROYECTOJV_QA_PDF, bytes);
 });
+
+test('la evidencia de Taller conserva el diagnóstico formativo y los apuntes sin pedir un examen final', async () => {
+  const lab=laboratory(),exports={},pdfRuntime={exports,module:{exports},atob,btoa,Blob,console};
+  pdfRuntime.global=pdfRuntime;vm.createContext(pdfRuntime);
+  vm.runInContext(readFileSync(new URL('../public/jspdf.umd.min.js',import.meta.url),'utf8'),pdfRuntime);
+  lab.sandbox.window.jspdf=exports;
+  Object.assign(lab.db.groups[0].units[0],{activityId:'computer-foundations',assignmentProfile:'taller-u1'});
+  lab.localStorage.setItem('aula-jt-campus-v1',JSON.stringify(lab.db));
+  lab.localStorage.setItem('proyectojv-foundations-v1:grupo:0:alumno',JSON.stringify({notes:'Apunte individual de Taller'}));
+  lab.send('aula-start-student',lab.who);
+  lab.send('aula-activity',{type:'diagnostic',name:'Punto de partida',answer:'Respuesta inicial de prueba',feedback:'Repasar procesador'});
+  assert.equal(lab.records()['grupo:0:alumno'].events[0].type,'diagnostic');
+  assert.ok(!('score' in lab.records()['grupo:0:alumno'].events[0]));
+  vm.runInContext('testPdf=downloadReport(contextInfo(),current())',lab.sandbox);
+  const bytes=Buffer.from(await lab.sandbox.testPdf.blob.arrayBuffer());
+  assert.ok(bytes.includes(Buffer.from('Respuesta inicial de prueba')));
+  assert.ok(bytes.includes(Buffer.from('Apunte individual de Taller')));
+  assert.ok(!bytes.includes(Buffer.from('Evaluaciones de pr')));
+  assert.ok(!bytes.includes(Buffer.from('No hay una evaluaci')));
+  if(process.env.PROYECTOJV_QA_TALLER_PDF)writeFileSync(process.env.PROYECTOJV_QA_TALLER_PDF,bytes);
+});

@@ -84,3 +84,25 @@ Se conserva la portada aprobada, la PC y el espacio claro de trabajo. El panel d
 | Lista de unidades sin una acción inicial destacada | Acceso a una unidad liberada y recorrido de tres pasos | Orientar al estudiante sin cambiar las reglas de acceso |
 
 No fue necesario crear recursos en Blender: se corrigió la interacción del equipo conservado. Los cambios siguen las guías Taste, Impeccable y Emil ya documentadas: jerarquía por tarea, controles reales y movimiento breve que conserva la posición de los objetivos. Las pruebas utilizan identidades sintéticas en la vista de ensayo; no se copian matrículas a la publicación.
+
+## Recorrido de Taller · 25 de octubre de 2026
+
+Se aplica `design-taste-frontend` v2 y su capítulo de pantallas de aplicación a un módulo del aula existente. Se omite el sorteo de una identidad nueva: se conservan la tipografía nativa, la marca, los blancos/aluminio/azul y la PC aprobada. Pregunta del módulo: «¿Qué debo comprender y preparar en esta primera unidad?». La navegación de temas, los ejemplos y la práctica ocupan el foco; los campos del trabajo usan controles nativos y guardado local explícito.
+
+El elemento propio del curso es el mismo equipo explicado desde seis temas, con regreso al recorrido. La animación enseña el paso del dato al archivo; se puede avanzar manualmente, reproducir o pausar y se respeta movimiento reducido. No se aplica un mínimo de animaciones de una portada a esta pantalla de estudio. Las imágenes son la PC y sus recortes existentes; no se incorporaron fotografías de terceros ni recursos nuevos de Blender.
+
+ROUND 1
+Seen in one second: El título de la unidad y los temas a la izquierda, con lectura y PC a la derecha.
+Idea (one sentence): Relacionar cada concepto con el mismo equipo y con el trabajo que preparará el estudiante.
+Live thing: Hitos seleccionables, recorrido del dato al archivo, PC original, comprobaciones y simulador de archivos.
+Layout words by section: inicio=lectura/imagen / temas=lectura/ejemplo/práctica / trabajo=formulario / foro=borrador.
+Scores: design 7 · usability 7 · creativity 7 · content 8 → overall 7.1 (autocrítica manual).
+Caps applied: Se usan las reglas de aplicación; no se aplican mínimos de fotografías o movimiento de una portada. No hay puntuación de inspector automático.
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. Tableta de 768 px: dos botones «Mi evidencia» compiten encima de la lectura. Se elimina el botón repetido del módulo; se conserva el del encabezado.
+2. Tableta de 768 px: la lista lateral resta ancho a los párrafos. Se pliega a un selector nativo hasta 960 px; en escritorio conserva su columna.
+3. Primera pantalla de escritorio: la fotografía del equipo no ofrece una acción cercana antes del diagnóstico. Se añade «Explorar la PC de la unidad» junto a la imagen, con regreso al recorrido.
+
+Además se corrigieron los enlaces de ampliación: CPU y almacenamiento abren sus fuentes específicas; historia y Explorador conservan las suyas.
+
+La revisión usa el navegador gestionado y sus capturas, junto a `lint.mjs --app`: 0 FAIL y 0 WARN en los tres archivos de interfaz nuevos. No se ejecuta `inspect.mjs`, que abre un navegador propio ajeno al flujo de vista previa gestionada; no se atribuyen sus mediciones al examen manual. Los límites pendientes de descarga están documentados en la verificación.

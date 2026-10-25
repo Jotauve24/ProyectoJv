@@ -1,5 +1,5 @@
 import {brandLink, homeLink, decorateAction} from './interface.js?v=1';
-import {experienceFor, restoreStudioState, calculateBudget, assessPractice} from './unit-models.js?v=1';
+import {experienceFor, restoreStudioState, calculateBudget, assessPractice} from './unit-models.js?v=2';
 import {motionButton, motionReduced} from './motion.js?v=1';
 
 const el = (tag, className, text) => { const n = document.createElement(tag); if (className) n.className = className; if (text !== undefined) n.textContent = text; return n; };
@@ -13,17 +13,17 @@ const icons = {
   slides: '<rect x="11" y="16" width="58" height="40" rx="5"/><path d="M40 56v15M29 71h22M21 27h21M21 35h15M48 45V34m9 11V27"/>',
   sheets: '<rect x="12" y="14" width="56" height="52" rx="5"/><path d="M12 28h56M12 41h56M12 54h56M31 14v52M49 14v52"/>',
 };
-export function unitIllustration(index, title, courseName) {
-  const experience = experienceFor(courseName, index, title), host = el('div', 'unit-visual');
+export function unitIllustration(index, title, courseName, activityId) {
+  const experience = experienceFor(courseName, index, title, activityId), host = el('div', 'unit-visual');
   host.setAttribute('aria-hidden', 'true');
-  if (index === 0 && /inform[aá]tica/i.test(courseName)) { host.classList.add('unit-visual-pc'); const image = el('img'); image.src = 'aula-pc-hero.webp'; image.alt = ''; image.loading = 'lazy'; host.append(image); }
+  if (['computer-foundations','pc-lab'].includes(activityId) || (activityId===undefined && index === 0 && /inform[aá]tica/i.test(courseName))) { host.classList.add('unit-visual-pc'); const image = el('img'); image.src = 'aula-pc-hero.webp'; image.alt = ''; image.loading = 'lazy'; host.append(image); }
   else if (experience) { host.style.setProperty('--unit-accent', experience.accent); host.style.setProperty('--unit-light', experience.light); host.innerHTML = '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + icons[experience.id] + '</svg>'; }
   else host.textContent = String(index + 1).padStart(2, '0');
   return host;
 }
 
 export function openUnitStudio({course, group, unit, unitIndex, context, onClose}) {
-  const experience = experienceFor(course.name, unitIndex, unit.title); if (!experience) return false;
+  const experience = experienceFor(course.name, unitIndex, unit.title, unit.activityId); if (!experience) return false;
   const opener = document.activeElement;
   const hasStudent = !!context.studentId, storageKey = 'aula-jt-learning-' + [context.groupId, unitIndex, context.studentId].join(':');
   const previous = hasStudent ? read(storageKey) : {};

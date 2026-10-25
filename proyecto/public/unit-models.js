@@ -42,7 +42,8 @@ export const experiences = [
     challenge: 'Modifica una cantidad o un precio y selecciona la fórmula que suma los subtotales.',
     defaults: {rows: [{name: 'Teclados', quantity: '4', price: '25'}, {name: 'Monitores', quantity: '2', price: '160'}, {name: 'Discos SSD', quantity: '3', price: '58'}], formula: ''}},
 ];
-export function experienceFor(courseName, unitIndex, title) {
+export function experienceFor(courseName, unitIndex, title, activityId) {
+  if(activityId!==undefined)return experiences.find(item=>item?.id===activityId)||null;
   const item = experiences[unitIndex];
   return normalize(courseName).includes('informatica') && item?.match.test(normalize(title)) ? item : null;
 }
