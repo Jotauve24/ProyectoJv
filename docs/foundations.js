@@ -37,9 +37,9 @@ export function openFoundations({course,group,unit,unitIndex,context}){
  const progress=el('p','foundation-progress');
  pages.forEach(([id,title])=>{const b=button(title,()=>go(id,true),'foundation-nav-button');b.dataset.page=id;b.setAttribute('aria-controls',content.id);nav.append(b)});
  nav.append(progress);layout.append(nav,content);root.append(header,pcReturn,mobileNav,layout,saveStatus);
- function go(id,focus=false){if(!ensure())return;stop();state.page=id;if(foundationTopics.some(t=>t.id===id)&&!state.visited.includes(id)){state.visited.push(id);record({type:'unit-explore',name:'Consulta del tema: '+foundationTopics.find(t=>t.id===id).title})}save();document.body.dataset.foundationView='course';render();if(focus){content.focus({preventScroll:true});root.scrollIntoView({behavior:'instant',block:'start'})}}
- function resume(){if(!ensure())return;stop();document.body.dataset.foundationView='course';render();root.scrollIntoView({behavior:'instant',block:'start'});content.focus({preventScroll:true})}
- function pc(index=0){if(!ensure())return;stop();document.body.dataset.foundationView='pc';document.querySelector('#nextpart').textContent='Volver al recorrido';document.querySelector('.tabs [data-view="lab"]').click();window.dispatchEvent(new CustomEvent('aula-select-part',{detail:{index}}));if(document.body.dataset.renderView==='realistic')window.dispatchEvent(new CustomEvent('aula-focus-realistic',{detail:{view:'detail'}}));window.dispatchEvent(new Event('resize'));root.scrollIntoView({behavior:'instant',block:'start'})}
+ function go(id,focus=false){if(!ensure())return;stop();state.page=id;if(foundationTopics.some(t=>t.id===id)&&!state.visited.includes(id)){state.visited.push(id);record({type:'unit-explore',name:'Consulta del tema: '+foundationTopics.find(t=>t.id===id).title})}save();document.body.dataset.foundationView='course';render();if(focus){content.focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'})}}
+ function resume(){if(!ensure())return;stop();document.body.dataset.foundationView='course';render();window.scrollTo({top:0,behavior:'instant'});content.focus({preventScroll:true})}
+ function pc(index=0){if(!ensure())return;stop();document.body.dataset.foundationView='pc';document.querySelector('#nextpart').textContent='Volver al recorrido';document.querySelector('.tabs [data-view="lab"]').click();window.dispatchEvent(new CustomEvent('aula-select-part',{detail:{index}}));if(document.body.dataset.renderView==='realistic')window.dispatchEvent(new CustomEvent('aula-focus-realistic',{detail:{view:'detail'}}));window.dispatchEvent(new Event('resize'));window.scrollTo({top:0,behavior:'instant'})}
  function paragraph(text,cls=''){content.append(el('p',cls,text))}
  function field(host,label,value,oninput,{rows=3,max=2500}={}){const l=el('label','foundation-field',label),n=el(rows===1?'input':'textarea');if(rows!==1)n.rows=rows;n.value=value||'';n.maxLength=max;n.oninput=()=>{oninput(n.value);save()};l.append(n);host.append(l);return n}
  function select(host,label,options,value,onchange){const l=el('label','foundation-field',label),s=el('select');s.append(new Option('Selecciona una respuesta',''));options.forEach(([v,t])=>s.append(new Option(t,v)));s.value=value||'';s.onchange=()=>{onchange(s.value);save()};l.append(s);host.append(l);return s}
@@ -151,5 +151,5 @@ export function openFoundations({course,group,unit,unitIndex,context}){
  const onStorage=e=>{if(e.key==='aula-jt-campus-v1')ensure()};window.addEventListener('storage',onStorage);
  const onVisibility=()=>{if(document.hidden)stop()};document.addEventListener('visibilitychange',onVisibility);
  active={resume,pc,dispose(){stop();root.remove();window.removeEventListener('storage',onStorage);document.removeEventListener('visibilitychange',onVisibility);if(downloadURL)URL.revokeObjectURL(downloadURL)}};
- render();return true;
+ render();window.scrollTo({top:0,behavior:'instant'});return true;
 }

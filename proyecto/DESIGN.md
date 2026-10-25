@@ -106,3 +106,17 @@ Top three problems (most visible first), each with the screenshot it shows in an
 Además se corrigieron los enlaces de ampliación: CPU y almacenamiento abren sus fuentes específicas; historia y Explorador conservan las suyas.
 
 La revisión usa el navegador gestionado y sus capturas, junto a `lint.mjs --app`: 0 FAIL y 0 WARN en los tres archivos de interfaz nuevos. No se ejecuta `inspect.mjs`, que abre un navegador propio ajeno al flujo de vista previa gestionada; no se atribuyen sus mediciones al examen manual. Los límites pendientes de descarga están documentados en la verificación.
+
+ROUND 2
+Seen in one second: El nombre de la unidad, el tema activo y el equipo del laboratorio.
+Idea (one sentence): Estudiar los seis conceptos y aplicarlos al mismo equipo y al trabajo de la unidad.
+Live thing: El acceso directo a la PC y las prácticas contextualizadas permanecen en el recorrido existente.
+Layout words by section: inicio=lectura/imagen/acción / temas=lectura/ejemplo/práctica / trabajo=formulario / foro=borrador.
+Scores: design 7.5 · usability 8 · creativity 7 · content 8.5 → overall 7.6 (autocrítica manual).
+Caps applied: Reglas de pantallas de aplicación; no se afirma ejecución del inspector automático.
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. Captura del primer acceso público: el desplazamiento heredado puede dejar el diagnóstico delante del título. Se fija la apertura y el cambio de tema al principio del aula, conservando la marca y el retorno.
+2. Captura de escritorio: el diagnóstico completo es largo. Se conservan las preguntas claras y el acceso libre a los temas; no se impone contestarlo para abrir contenido.
+3. Captura adaptable: la lectura exige desplazamiento en un teléfono. Se conserva cuerpo de 16 px y navegación plegada, en vez de reducir las letras para encajar más texto.
+
+La publicación de la primera revisión pasó las 33 pruebas de GitHub y el despliegue de Pages. Se comprobó en el enlace público la biblioteca, los seis temas y el nuevo acceso a la PC; las capturas finales se revisaron con los ajustes de navegación y con controles nativos visibles.

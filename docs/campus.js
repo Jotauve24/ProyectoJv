@@ -1,5 +1,5 @@
 import {activityCatalog,activityForUnit,courseTemplates,courseTemplate,unitsForCourse,isLaboratoryUnit,tallerUnitDescription} from './activity-catalog.js?v=1';
-import {openFoundations,closeFoundations,showFoundationsPC} from './foundations.js?v=1';
+import {openFoundations,closeFoundations,showFoundationsPC} from './foundations.js?v=2';
 import {mergeCampus} from './campus-store.js?v=1';
 import {guideUnits} from './course-guide.js?v=1';
 import {createMaterial, importMaterial} from './material.js?v=2';
