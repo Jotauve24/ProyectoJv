@@ -1,7 +1,0 @@
-Quiero continuar el proyecto ProyectoJv del ZIP adjunto. Descomprímelo y lee primero LEEME_PRIMERO.md y CONTEXTO_Y_ESTADO.md. El código está en proyecto/ y la guía académica original en referencia/.
-
-Retoma el estado actual, conserva la PC realista y las seis piezas individuales aprobadas, y respeta la organización ciclo > grupos variables > materia por grupo > estudiantes > seis unidades. Cada unidad solo se abre cuando el docente la libera; finalizar no debe desbloquear la siguiente.
-
-No lo reconstruyas desde cero ni afirmes que existen cuentas o sincronización central: hoy los registros y la liberación son principalmente locales. La descarga del PDF fue modificada con una ruta HTTP, pero su guardado real en el navegador del usuario aún necesita validación.
-
-Revisa el paquete y dime qué puedes continuar con las herramientas de esta cuenta. Para publicar, utiliza un proyecto nuevo de esta cuenta si no tienes acceso autorizado al original. No reutilices su identificador ni cambies la web original.

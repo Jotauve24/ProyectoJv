@@ -1,18 +1,27 @@
-# ProyectoJv
+<div align="center">
+  <img src="./docs/aula-pc-hero.webp" width="760" alt="Laboratorio educativo interactivo ProyectoJv" />
+  <h1>ProyectoJv</h1>
+  <p><strong>Laboratorio educativo interactivo de informática</strong></p>
+  <p>Grupos, seis unidades, prácticas guiadas, exploración visual de una computadora y evidencias PDF.</p>
+  <p>
+    <a href="https://jotauve24.github.io/ProyectoJv/">
+      <img src="https://img.shields.io/badge/ABRIR_LABORATORIO-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Abrir ProyectoJv" />
+    </a>
+    <img src="https://img.shields.io/badge/ESTADO-FUNCIONAL-16A34A?style=for-the-badge" alt="Estado funcional" />
+    <img src="https://img.shields.io/badge/PRIVACIDAD-DATOS_LOCALES-111827?style=for-the-badge" alt="Datos locales" />
+  </p>
+</div>
 
-Laboratorio educativo de informática con grupos, seis unidades, exploración de una computadora, prácticas y evidencias PDF.
+## Qué ofrece
 
-Repositorio: https://github.com/Jotauve24/ProyectoJv
+- Seis unidades sobre informática, Internet, colaboración, documentos, presentaciones y hojas de cálculo.
+- Experiencias visuales y prácticas con progreso independiente por estudiante y grupo.
+- Liberación y retiro de unidades desde la vista docente.
+- Exploración fotográfica de componentes y una escena 3D educativa.
+- Generación de evidencias PDF directamente en el navegador.
+- Navegación por teclado, adaptación móvil y compatibilidad con movimiento reducido.
 
-Publicación web: GitHub Pages, desde la carpeta `docs` de la rama `main`.
-
-Sitio: https://jotauve24.github.io/ProyectoJv/
-
-## Continuar el proyecto
-
-Lee primero `LEEME_PRIMERO.md` y `CONTEXTO_Y_ESTADO.md`. El código está en `proyecto/` y la guía académica original en `referencia/`.
-
-Conserva el diseño, la PC y las funciones existentes. Las unidades solo se abren cuando el docente las libera; finalizar una unidad es una acción independiente.
+> ProyectoJv es un recurso de apoyo educativo. No sustituye la plataforma académica institucional ni autentica identidades. Los datos y el progreso de la publicación en GitHub Pages se conservan en el navegador del usuario.
 
 ## Ejecutar en desarrollo
 
@@ -50,7 +59,7 @@ Guarda los cambios del código y de `docs/` en la rama `main`. GitHub Pages publ
 - La descarga final desde el dispositivo del usuario y la sincronización entre dispositivos siguen pendientes de verificación o implementación, respectivamente.
 - Los identificadores internos `aula-jt-*` y el formato `aula-jt-material` se conservan por compatibilidad.
 
-El repositorio guarda el código. La publicación de la aplicación se gestiona por separado.
+La aplicación pública está disponible en [GitHub Pages](https://jotauve24.github.io/ProyectoJv/) y se genera desde la carpeta `docs/`.
 
 La revisión funcional y sus límites están documentados en [VERIFICACION_GENERAL.md](VERIFICACION_GENERAL.md). Desde `proyecto/`, `npm test` ejecuta las pruebas de regresión sin instalar dependencias adicionales.
 

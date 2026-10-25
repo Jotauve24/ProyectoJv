@@ -1,0 +1,34 @@
+name: Verificar ProyectoJv
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Preparar pnpm
+        run: corepack enable
+
+      - name: Instalar dependencias
+        run: pnpm --dir proyecto install --frozen-lockfile
+
+      - name: Ejecutar pruebas
+        run: pnpm --dir proyecto test
+
+      - name: Verificar la publicación de Pages
+        run: node proyecto/scripts/build-pages.mjs

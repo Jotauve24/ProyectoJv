@@ -10,8 +10,15 @@ coverage/
 .sites-runtime/
 .agents/
 .codex/
+.openai/
 outputs/
 work/
+
+# Materiales internos de traspaso y control local.
+MENSAJE_PARA_EL_OTRO_CHAT.txt
+LEEME_PRIMERO.md
+CONTEXTO_Y_ESTADO.md
+ARCHIVOS_SHA256.json
 
 # Configuración privada y credenciales locales.
 .env
