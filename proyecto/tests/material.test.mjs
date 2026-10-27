@@ -63,3 +63,14 @@ test('un paquete antiguo sin released permanece bloqueado y un ciclo archivado n
   assert.throws(() => importMaterial(db, data, 'Otro estudiante', () => 'alumno-2'));
   assert.deepEqual(db, before);
 });
+
+test('el docente importa material sin matricularse y conserva la matrícula al actualizarlo', () => {
+  const db=campus(),data=packet();
+  const first=importMaterial(db,data,'',()=>{throw Error('No debe crear un alumno docente');},{enroll:false});
+  assert.equal(first.student,null);assert.equal(first.group.students.length,0);
+  importMaterial(db,data,'Estudiante',()=> 'alumno-1');
+  data.units[0].description='Material actualizado';
+  const again=importMaterial(db,data,'',()=>{throw Error('No debe crear otro alumno');},{enroll:false});
+  assert.equal(again.group.students.length,1);assert.equal(again.group.students[0].id,'alumno-1');
+  assert.equal(again.group.units[0].description,'Material actualizado');
+});

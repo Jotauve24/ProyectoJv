@@ -21,7 +21,7 @@ export function createMaterial(db, group) {
   };
 }
 
-export function importMaterial(db, data, studentName, uid) {
+export function importMaterial(db, data, studentName, uid, {enroll = true} = {}) {
   // Validar todo antes de modificar el campus: un archivo inválido no deja datos parciales.
   if (!data || data.format !== 'aula-jt-material' || data.version !== 1 || !Array.isArray(data.units) || data.units.length !== 6)
     throw Error('El archivo no tiene el formato de un material de ProyectoJv.');
@@ -32,7 +32,7 @@ export function importMaterial(db, data, studentName, uid) {
     meta[type] = {id, name};
   }
   const name = text(studentName, 100);
-  if (!name) throw Error('Escribe tu nombre y apellido.');
+  if (enroll && !name) throw Error('Escribe tu nombre y apellido.');
   const units = data.units.map((u, i) => {
     if (!u || typeof u !== 'object' || Array.isArray(u) || !text(u.title, 300))
       throw Error(`Revisa el contenido de la unidad ${i + 1}.`);
@@ -64,7 +64,10 @@ export function importMaterial(db, data, studentName, uid) {
     group = {...meta.group, course: course.id, cycle: cycle.id, students: [], imported: true, units};
     db.groups.push(group);
   }
-  let student = group.students.find(s => s.name.toLocaleLowerCase() === name.toLocaleLowerCase());
-  if (!student) { student = {id: uid(), name}; group.students.push(student); }
+  let student = null;
+  if (enroll) {
+    student = group.students.find(s => s.name.toLocaleLowerCase() === name.toLocaleLowerCase());
+    if (!student) { student = {id: uid(), name}; group.students.push(student); }
+  }
   return {group, student, cycle};
 }

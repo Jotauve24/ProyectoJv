@@ -120,3 +120,9 @@ Top three problems (most visible first), each with the screenshot it shows in an
 3. Captura adaptable: la lectura exige desplazamiento en un teléfono. Se conserva cuerpo de 16 px y navegación plegada, en vez de reducir las letras para encajar más texto.
 
 La publicación de la primera revisión pasó las 33 pruebas de GitHub y el despliegue de Pages. Se comprobó en el enlace público la biblioteca, los seis temas y el nuevo acceso a la PC; las capturas finales se revisaron con los ajustes de navegación y con controles nativos visibles.
+
+## Separación de accesos · 26 de octubre de 2026
+
+Se conserva la identidad del aula. La pregunta de la entrada estudiantil es «¿A qué materia y grupo entro?»: dos listas nativas, nombre y una acción de entrada. La ayuda para cargar material corresponde al alumno; las acciones de gestión permanecen en el portal docente. El encabezado, el logo y las ventanas conservan el destino de Inicio según el portal. Abrir la vista estudiantil desde el panel docente mantiene este panel en su pestaña.
+
+El recorrido identificó tres fricciones: una sola lista mezclaba grupo y materia y omitía Taller; Inicio enviaba al alumno a la portada con acceso docente; el formulario del profesor usaba sugerencias de materia que dependían del navegador. Se separaron materia/grupo, se conservaron los destinos por portal y se utilizó un selector docente real. Los campos de entrada usan texto de 16 px, etiquetas visibles, controles de al menos 46 px, estados vacíos y ayuda legible. Las capturas de teléfono y tableta no muestran desbordamiento horizontal; no se reconstruyó el diseño ni se añadieron imágenes o dependencias.

@@ -16,6 +16,10 @@ const paths = {
   share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m9 10 6-4m-6 8 6 4"/>',
 };
 
+function homeTarget(){return location.pathname+({student:'?vista=estudiante',teacher:'?vista=docente'}[document.body.dataset.audience]||'')}
+function updateHomeLinks(){document.querySelectorAll('a[data-project-home]').forEach(a=>a.href=homeTarget())}
+window.addEventListener('aula-audience-changed',updateHomeLinks);
+
 export function uiIcon(name) {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('fill', 'none');
@@ -28,7 +32,7 @@ export function uiIcon(name) {
 
 export function brandLink(className = '') {
   const a = document.createElement('a');
-  a.className = 'project-brand ' + className; a.href = './'; a.dataset.projectHome = '';
+  a.className = 'project-brand ' + className; a.href = homeTarget(); a.dataset.projectHome = '';
   a.setAttribute('aria-label', 'ProyectoJv · Ir a Inicio'); a.title = 'Ir a Inicio';
   const image = document.createElement('img'); image.src = 'logo.svg'; image.alt = ''; image.width = 44; image.height = 44;
   const word = document.createElement('span'); word.className = 'brand-words'; word.append('Proyecto');
@@ -37,7 +41,7 @@ export function brandLink(className = '') {
 }
 
 export function homeLink(className = '') {
-  const a = document.createElement('a'); a.href = './'; a.dataset.projectHome = '';
+  const a = document.createElement('a'); a.href = homeTarget(); a.dataset.projectHome = '';
   a.className = 'smallbtn home-control ' + className; a.append(uiIcon('home'));
   const label = document.createElement('span'); label.textContent = 'Inicio'; a.append(label);
   return a;

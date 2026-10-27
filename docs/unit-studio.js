@@ -1,4 +1,4 @@
-import {brandLink, homeLink, decorateAction} from './interface.js?v=1';
+import {brandLink, homeLink, decorateAction} from './interface.js?v=2';
 import {experienceFor, restoreStudioState, calculateBudget, assessPractice} from './unit-models.js?v=2';
 import {motionButton, motionReduced} from './motion.js?v=1';
 

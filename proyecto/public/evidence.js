@@ -38,6 +38,7 @@ function selectField(form, label, name, options) {
   l.append(s); form.append(l); return s;
 }
 function openEvidence(pre = {}) {
+  if(!['teacher','student'].includes(document.body.dataset.mode))return;
   const db = read(); if (!db) return;
   const studentMode = document.body.dataset.mode === 'student', activeInfo = contextInfo();
   if (studentMode && (!activeInfo || activeInfo.cycle.closed || activeInfo.unit.released !== true)) {
@@ -71,8 +72,8 @@ function openEvidence(pre = {}) {
   function selection() { return {groupId: gs.value, unitIndex: Number(us.value), studentId: ss.value}; }
   function fill() {
     const g = db.groups.find(x => x.id === gs.value); us.replaceChildren(); ss.replaceChildren();
-    g?.units.forEach((u, i) => { const o = node('option', `${i + 1}. ${u.title}`); o.value = i; us.append(o); });
-    g?.students.forEach(st => { const o = node('option', st.name); o.value = st.id; ss.append(o); });
+    g?.units.forEach((u, i) => { if(studentMode&&i!==activeInfo.unitIndex)return; const o = node('option', `${i + 1}. ${u.title}`); o.value = i; us.append(o); });
+    g?.students.forEach(st => { if(studentMode&&st.id!==activeInfo.student.id)return; const o = node('option', st.name); o.value = st.id; ss.append(o); });
     if (!g?.students.length) { const o = node('option', 'Agrega primero estudiantes al grupo'); o.value = ''; ss.append(o); }
   }
   function updateSummary() {

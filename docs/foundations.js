@@ -1,5 +1,5 @@
 import {foundationTopics,historyMilestones,diagnosticQuestions,assessDiagnostic,checkFoundationPractice,foundationStorageKey,restoreFoundations,updateFolder} from './foundation-models.js?v=1';
-import {decorateAction} from './interface.js?v=1';
+import {decorateAction} from './interface.js?v=2';
 import {motionReduced} from './motion.js?v=1';
 const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
 const button=(text,fn,cls='foundation-button')=>{const b=el('button',cls,text);b.type='button';b.onclick=fn;return decorateAction(b,text)};
